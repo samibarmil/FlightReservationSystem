@@ -13,7 +13,5 @@ public class Airport {
 	private List<Flight>flights = new ArrayList<Flight>();
 	private List<Airline>airlines = new ArrayList<Airline>();
 	
-	
-	//name is eyuwl
 
 }
