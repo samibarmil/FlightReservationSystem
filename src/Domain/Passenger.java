@@ -10,8 +10,10 @@ public class Passenger extends Person {
 	// one passenger for many Tickets
 	// one passenger for a List of Reservation
 
-	private List<Reservation> reservations = new ArrayList<Reservation>();
-	private List<Ticket> tickets = new ArrayList<Ticket>();
+//	private List<Reservation> reservations = new ArrayList<Reservation>();
+//	private List<Ticket> tickets = new ArrayList<Ticket>();
+	
+	
 	
 
 }
