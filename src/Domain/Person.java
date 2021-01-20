@@ -1,9 +1,6 @@
 package Domain;
 
-<<<<<<< Updated upstream
-public class Person {
 
-=======
 import java.time.LocalDate;
 
 public class Person {
@@ -12,5 +9,5 @@ public class Person {
 	private Address address;
 	
 	
->>>>>>> Stashed changes
+
 }

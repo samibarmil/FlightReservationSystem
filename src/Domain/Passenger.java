@@ -1,8 +1,6 @@
 package Domain;
 
-<<<<<<< Updated upstream
-public class Passenger {
-=======
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +12,6 @@ public class Passenger extends Person {
 
 	private List<Reservation> reservations = new ArrayList<Reservation>();
 	private List<Ticket> tickets = new ArrayList<Ticket>();
->>>>>>> Stashed changes
+
 
 }

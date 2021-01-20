@@ -1,8 +1,6 @@
 package Domain;
 
-<<<<<<< Updated upstream
-public class Crew {
-=======
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +13,6 @@ public class Crew extends Person {
 		
 	
 	
->>>>>>> Stashed changes
+
 
 }

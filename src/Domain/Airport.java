@@ -1,8 +1,8 @@
 package Domain;
 
-<<<<<<< Updated upstream
-public class Airport {
-=======
+
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +13,5 @@ public class Airport {
 	private List<Flight>flights = new ArrayList<Flight>();
 	private List<Airline>airlines = new ArrayList<Airline>();
 	
->>>>>>> Stashed changes
 
 }

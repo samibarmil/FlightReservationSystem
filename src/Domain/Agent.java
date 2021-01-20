@@ -1,9 +1,8 @@
 package Domain;
 
-<<<<<<< Updated upstream
-public class Agent {
 
-=======
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,5 +14,5 @@ public class Agent extends Person {
 	// a minimum of one agent for 0 or many reservations
 
 	private List<Reservation> reservations = new ArrayList<Reservation>();
->>>>>>> Stashed changes
+
 }

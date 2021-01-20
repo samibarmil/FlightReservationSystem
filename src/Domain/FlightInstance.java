@@ -1,8 +1,6 @@
 package Domain;
 
-<<<<<<< Updated upstream
-public class FlightInstance {
-=======
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +22,6 @@ public class FlightInstance {
 	private List<Pilot>pilots = new ArrayList<Pilot>();
 	private List<Reservation>reservations = new ArrayList<Reservation>();
 	private List<Ticket>ticket = new ArrayList<Ticket>();
->>>>>>> Stashed changes
+
 
 }
