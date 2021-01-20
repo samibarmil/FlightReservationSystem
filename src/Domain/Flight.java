@@ -1,10 +1,13 @@
 package Domain;
 
+import java.time.LocalTime;
+
 public class Flight {
 
-	//each Flight has a minimum of 2 airport for departing and arriving 
-	private Airport departime;
-	private Airport arrivaltime;
-  
+	private String id;
+	private String number;
+	private int capacity;
+	private LocalTime departureTime;
+	private LocalTime arrivalTime;
 
 }
