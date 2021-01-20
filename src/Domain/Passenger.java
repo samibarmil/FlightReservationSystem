@@ -12,6 +12,6 @@ public class Passenger extends Person {
 
 	private List<Reservation> reservations = new ArrayList<Reservation>();
 	private List<Ticket> tickets = new ArrayList<Ticket>();
-
+	
 
 }
