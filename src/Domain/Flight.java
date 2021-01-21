@@ -100,16 +100,21 @@ public class Flight {
 	public void setArrivalAirport(Airport arrivalAirport) {
 		this.arrivalAirport = arrivalAirport;
 	}
-	
+
 	@Override
 	public String toString() {
-		return String.format("ID: %s\tNumber: %s\tCapacity: %d\tDeparture Time: %s\tArrival Time: %s\t"
-				+ "From: %s\t To: %s", id, number, capacity, departureTime.toString(), arrivalTime.toString(), 
-				departureAirport.getCode(), arrivalAirport.getCode());
+		return String.format(
+				"ID: %s\tNumber: %s\tCapacity: %d\tDeparture Time: %s\tArrival Time: %s\t" + "From: %s\t To: %s", id,
+				number, capacity, departureTime.toString(), arrivalTime.toString(), departureAirport.getCode(),
+				arrivalAirport.getCode());
 	}
 
 	public List<FlightInstance> getFlightInstances() {
 		return flightInstances;
+	}
+
+	public void createFlightInstance(FlightInstance instance) {
+		flightInstances.add(instance);
 	}
 
 }
