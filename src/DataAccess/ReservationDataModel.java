@@ -28,7 +28,7 @@ public class ReservationDataModel implements iDataModel {
 	}
 
 	@Override
-	public List getall() {
+	public List<Reservation> getall() {
 		return new ArrayList<Reservation>(pilots.values());
 	}
 

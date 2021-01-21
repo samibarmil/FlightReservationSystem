@@ -25,7 +25,7 @@ public class CrewDataModel implements iDataModel {
 	}
 
 	@Override
-	public List getall() {
+	public List<Crew> getall() {
 		return new ArrayList<Crew>(crews.values());
 	}
 

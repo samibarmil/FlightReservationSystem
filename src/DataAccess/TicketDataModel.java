@@ -28,7 +28,7 @@ public class TicketDataModel implements iDataModel {
 	}
 
 	@Override
-	public List getall() {
+	public List<Ticket> getall() {
 		return new ArrayList<Ticket>(tickets.values());
 	}
 
