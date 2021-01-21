@@ -39,9 +39,9 @@ public final class AirLineBusiness {
 			for (Flight f : a.getFlights()) { // Get the whole list of flights in each Airline
 				if (airLineFound == true)
 					break; // It breaks once an airline is found
-				for (Flight fo : flightsOutOfAnAirport) // To check if
-					if (f.getId() == fo.getId()) { // Check it's one of the departure flights we have to get it's
-													// airline
+				for (Flight fo : flightsOutOfAnAirport)
+					if (f.getId() == fo.getId()) { // Check if it's one of the departure flights we have to get it's
+																					// airline
 						airLinesOutOfAnAirport.add(a);
 						airLineFound = true;
 						break;
