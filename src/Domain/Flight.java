@@ -20,7 +20,7 @@ public class Flight {
 	private ArrayList<Integer> randomNumbersInUse = new ArrayList<>();
 
 	public Flight(int numOfSeats, LocalTime departureTime, LocalTime arrivalTime, Airport departureAirport,
-			Airport arrivalAirport) throws Exception {
+			Airport arrivalAirport) throws UserException {
 		this.id = UUID.randomUUID().toString();
 		this.number = getRandomNumber();
 		this.capacity = numOfSeats;
@@ -35,7 +35,7 @@ public class Flight {
 	}
 
 	// A unique random number is generated here
-	private String getRandomNumber() throws Exception {
+	private String getRandomNumber() throws UserException {
 
 		Random r = new Random();
 		int rNumber = r.nextInt(1000);
