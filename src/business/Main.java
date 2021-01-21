@@ -2,18 +2,13 @@ package business;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
 import DataAccess.DataModel;
-import Domain.Address;
-import Domain.Airline;
-import Domain.Airport;
-import Domain.Flight;
-import Domain.FlightInstance;
-import Domain.Passenger;
-import Domain.UserException;
+import Domain.*;
 
 public class Main {
 
@@ -29,7 +24,7 @@ public class Main {
 		return randomValue.toString();
 
 	}
-	
+
 	private static String StringRand(int num) {
 		String alphaNumericSet = "ABCD";
 		StringBuilder randomValue = new StringBuilder();
@@ -41,57 +36,94 @@ public class Main {
 		return randomValue.toString();
 
 	}
-	
-	
-	public static void main(String[] args) {
 
-		Random rand = new Random();
-		for(int i = 0; i < 50; i++) {
+	public static void generatePassengers() {
+		for (int i = 0; i < 50; i++) {
 			new Passenger(randomAlphaNumeric(), randomAlphaNumeric(), randomAlphaNumeric(), LocalDate.now());
 		}
-		
-		for(int i = 0; i < 100; i++) {
+	}
+
+	public static void generateAgents() {
+		for (int i = 0; i < 50; i++) {
+			new Agent(randomAlphaNumeric(), randomAlphaNumeric(), randomAlphaNumeric(), LocalDate.now());
+		}
+	}
+
+	public static void generateAirports() {
+		for (int i = 0; i < 100; i++) {
 			try {
-			new Airport(StringRand(3), StringRand(10), new Address(StringRand(9), StringRand(9), StringRand(9), StringRand(9)));
-			}
-			catch (UserException e) {
+				new Airport(StringRand(3), StringRand(10),
+						new Address(StringRand(9), StringRand(9), StringRand(9), StringRand(9)));
+			} catch (UserException e) {
 				System.err.println(e);
 			}
 		}
-		
-		for(int i =0; i < 30; i++) {
+	}
+
+	public static void generateAirlines() {
+		Random rand = new Random();
+
+		for (int i = 0; i < 30; i++) {
 			Airline airline = new Airline(StringRand(3), StringRand(3), StringRand(100));
 			System.out.println(airline.getCode() + ":");
-			for(int j = 0; j < 70; j++) {
+			for (int j = 0; j < 70; j++) {
 				Flight flight;
 				try {
-					 flight = (new Flight(rand.nextInt(100), LocalTime.now() , LocalTime.now(), 
-							DataModel.airportDataModel.getall().get(rand.nextInt(100)), DataModel.airportDataModel.getall().get(rand.nextInt(100))));
-				airline.createFlight(flight);
-				System.out.println(flight);
+					flight = (new Flight(rand.nextInt(100), LocalTime.now(), LocalTime.now(),
+							DataModel.airportDataModel.getall().get(rand.nextInt(100)),
+							DataModel.airportDataModel.getall().get(rand.nextInt(100))));
+
+					for (int z = 0; z < 90; z++) {
+						flight.createFlightInstance(new FlightInstance(LocalDate.now()));
+					}
+					airline.createFlight(flight);
+					// System.out.println(flight);
+
 				} catch (UserException e) {
 					System.err.println(e);
 				}
-				for(int z = 0; z < 90; z++) {
-					flight.createFlightInstance(new FlightInstance(LocalDate.now()));
-				}
-				
+
 			}
 		}
+	}
+
+	static void generateReservations() {
+		Random rand = new Random();
+		for (Passenger passenger : DataModel.passengerDataModel.getall()) {
+
+			for (int i = 0; i < 50; i++) {
+				List<FlightInstance> fi = new ArrayList<>();
+				fi.add(DataModel.flightDataModel.getall().get(rand.nextInt(70)).getFlightInstances()
+						.get(rand.nextInt(90)));
+				fi.add(DataModel.flightDataModel.getall().get(rand.nextInt(70)).getFlightInstances()
+						.get(rand.nextInt(90)));
+				fi.add(DataModel.flightDataModel.getall().get(rand.nextInt(70)).getFlightInstances()
+						.get(rand.nextInt(90)));
+				passenger.CreateReservation(fi);
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		generatePassengers();
+		generateAirports();
+		generateAirlines();
+		generateReservations();
+
+		Random rand = new Random();
+
 		System.out.println("################################################################");
 		AirLineBusiness.airlinesFlyingOutFromSpecificAirport("AAC");
+
+		List<FlightInstance> fi = new ArrayList<>();
+		fi.add(DataModel.flightDataModel.getall().get(rand.nextInt(70)).getFlightInstances().get(rand.nextInt(90)));
+		fi.add(DataModel.flightDataModel.getall().get(rand.nextInt(70)).getFlightInstances().get(rand.nextInt(90)));
+		fi.add(DataModel.flightDataModel.getall().get(rand.nextInt(70)).getFlightInstances().get(rand.nextInt(90)));
+
+		ReservationBusiness.CreateReservation(DataModel.passengerDataModel.getall().get(rand.nextInt(50)), fi);
 		
-		for(Passenger passenger : DataModel.passengerDataModel.getall()) {
-			
-			List<FlightInstance> flights = new FlightInstance(LocalDate.now());
-			for(int i = 0; i < 3; i++) {
-				
-			}
-			
-			for(int i = 0; i < 50; i++) {
-				passenger.CreateReservation(null);
-			}
-		}
+		Passenger psgr = DataModel.passengerDataModel.getall().get(rand.nextInt(50));
+		ReservationBusiness.ViewSpecificReservation(psgr, psgr.ViewAllReservations().get(rand.nextInt(50)).getId());
 
 	}
 
