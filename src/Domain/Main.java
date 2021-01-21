@@ -1,7 +1,14 @@
 package Domain;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.ArrayBlockingQueue;
+
+import DataAccess.DataModel;
 
 public class Main {
 
@@ -31,6 +38,17 @@ public class Main {
 		System.out.println(randomAlphaNumeric());
 
 		// System.out.println(getSaltString());
+		List<Pilot> x = new ArrayList<>();
+		for(int i =0; i < 20; i ++) {
+			x.add(new Pilot(randomAlphaNumeric(), randomAlphaNumeric(), randomAlphaNumeric(), LocalDate.now(),0 ));
+			
+			
+		}
+		
+		
+		System.out.println(DataModel.pilotDataModel.getall().toString());
+		
+		
 	}
 
 }

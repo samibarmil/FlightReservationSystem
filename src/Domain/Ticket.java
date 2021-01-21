@@ -3,6 +3,8 @@ package Domain;
 import java.util.Random;
 import java.util.UUID;
 
+import DataAccess.DataModel;
+
 public class Ticket {
 
 	private final String id;
@@ -13,6 +15,7 @@ public class Ticket {
 		this.id = UUID.randomUUID().toString();
 		this.ticketNumber = UUID.randomUUID().toString();
 		this.specificFlight = flight;
+		DataModel.ticketDataModel.addEntity(this);
 	}
 
 	public String getId() {

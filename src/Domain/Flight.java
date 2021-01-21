@@ -1,6 +1,9 @@
 package Domain;
 
 import java.util.*;
+
+import DataAccess.DataModel;
+
 import java.time.LocalTime;
 
 public class Flight {
@@ -24,6 +27,9 @@ public class Flight {
 		this.arrivalTime = arrivalTime;
 		this.departureAirport = departureAirport;
 		this.arrivalAirport = arrivalAirport;
+		
+		DataModel.flightDataModel.addEntity(this);
+		
 
 	}
 
