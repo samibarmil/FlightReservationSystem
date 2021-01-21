@@ -3,6 +3,8 @@ package Domain;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import DataAccess.DataModel;
+
 public class FlightInstance {
 
 	private final String id;
@@ -11,6 +13,8 @@ public class FlightInstance {
 	public FlightInstance(LocalDate flightDate) {
 		this.id = UUID.randomUUID().toString();
 		this.flightInstanceDate = flightDate;
+		
+		DataModel.flightInstanceDataModel.addEntity(this);
 	}
 
 	public String getId() {

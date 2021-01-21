@@ -3,6 +3,8 @@ package Domain;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import DataAccess.DataModel;
+
 
 public class Airline {
 
@@ -18,6 +20,8 @@ public class Airline {
 		this.name = name;
 		this.history = history;
 		flights = new ArrayList<>();
+		
+		DataModel.airLineDataModel.addEntity(this);
 
 	}
 

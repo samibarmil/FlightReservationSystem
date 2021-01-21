@@ -2,6 +2,8 @@ package Domain;
 
 import java.util.*;
 
+import DataAccess.DataModel;
+
 public class Airport {
 
 	private final String id;
@@ -17,6 +19,8 @@ public class Airport {
 		this.code = code;
 		this.name = name;
 		this.airportAddress = address;
+		
+		DataModel.airportDataModel.addEntity(this);
 	}
 
 	public String getId() {

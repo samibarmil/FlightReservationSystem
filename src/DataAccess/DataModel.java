@@ -5,20 +5,20 @@ import java.util.List;
 
 
 
-public final class DataModel {
+public abstract class DataModel {
 	
 	
 	
-	private static AgentDataModel agentDataModel = new AgentDataModel();
-	private static AirportDataModel airportDataModel = new AirportDataModel();
-	private static AirlineDataModel airLineDataModel = new AirlineDataModel();
-	private static CrewDataModel crewDataModel = new CrewDataModel();
-	private static FlightDataModel flightDataModel = new FlightDataModel();
-	private static FlightInstanceDataModel flightInstanceDataModel = new FlightInstanceDataModel();
-	private static PassengerDataModel passengerDataModel = new PassengerDataModel();
-	private static PilotDataModel pilotDataModel = new PilotDataModel();
-	private static ReservationDataModel reservationDataModel = new ReservationDataModel();
-	private static TicketDataModel ticketDataModel = new TicketDataModel();
+	public static AgentDataModel agentDataModel = new AgentDataModel();
+	public static AirportDataModel airportDataModel = new AirportDataModel();
+	public static AirlineDataModel airLineDataModel = new AirlineDataModel();
+	public static CrewDataModel crewDataModel = new CrewDataModel();
+	public static FlightDataModel flightDataModel = new FlightDataModel();
+	public static FlightInstanceDataModel flightInstanceDataModel = new FlightInstanceDataModel();
+	public static PassengerDataModel passengerDataModel = new PassengerDataModel();
+	public static PilotDataModel pilotDataModel = new PilotDataModel();
+	public static ReservationDataModel reservationDataModel = new ReservationDataModel();
+	public static TicketDataModel ticketDataModel = new TicketDataModel();
 	
 	
 

@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
+import DataAccess.DataModel;
+
 public class Reservation {
 
 	private final String id;
@@ -17,6 +19,7 @@ public class Reservation {
 		this.id = UUID.randomUUID().toString();
 		this.reservationCode = randomAlphaNumeric();
 		tickets = new ArrayList<>();
+		DataModel.reservationDataModel.addEntity(this);
 	}
 
 	// A unique alphanumeric is generated here
