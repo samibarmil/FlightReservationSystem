@@ -37,4 +37,14 @@ public class AgentDataModel implements iDataModel {
 		return false;
 	}
 
+	@Override
+	public boolean UpdateEntity(Object obj) {
+		if (obj instanceof Agent) {
+			Agent agent = (Agent) obj;
+			agents.put(agent.getId(), agent);
+			return true;
+		}
+		return false;
+	}
+
 }

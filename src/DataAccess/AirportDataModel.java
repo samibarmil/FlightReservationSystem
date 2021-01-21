@@ -1,6 +1,8 @@
 package DataAccess;
 
 import java.util.*;
+
+import Domain.Airline;
 import Domain.Airport;
 
 public class AirportDataModel implements iDataModel {
@@ -44,6 +46,16 @@ public class AirportDataModel implements iDataModel {
 				return airports.get(airport.getId());
 		}
 		return null;
+	}
+	
+	@Override
+	public boolean UpdateEntity(Object obj) {
+		if (obj instanceof Airport) {
+			Airport airport = (Airport) obj;
+			airports.put(airport.getId(), airport);
+			return true;
+		}
+		return false;
 	}
 
 }

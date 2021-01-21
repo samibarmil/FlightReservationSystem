@@ -5,10 +5,10 @@ import java.util.*;
 import Domain.Agent;
 import Domain.Airline;
 
-public class AirlineDataModel implements iDataModel{
+public class AirlineDataModel implements iDataModel {
 
 	private Map<String, Airline> airlines = new HashMap<>();
-	
+
 	@Override
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Airline) {
@@ -21,8 +21,8 @@ public class AirlineDataModel implements iDataModel{
 
 	@Override
 	public Object getEntity(String Id) {
-		for(Airline airline : airlines.values())
-			if(airline.getId() == Id)
+		for (Airline airline : airlines.values())
+			if (airline.getId() == Id)
 				return airline;
 		System.err.println("No such Agent with given Id");
 		return null;
@@ -35,13 +35,23 @@ public class AirlineDataModel implements iDataModel{
 
 	@Override
 	public boolean deleteEntity(String Id) {
-		if(airlines.containsKey(Id)) {
+		if (airlines.containsKey(Id)) {
 			airlines.remove(Id);
 			return true;
 		}
-		
+
 		return false;
-			
+
+	}
+
+	@Override
+	public boolean UpdateEntity(Object obj) {
+		if (obj instanceof Airline) {
+			Airline airline = (Airline) obj;
+			airlines.put(airline.getId(), airline);
+			return true;
+		}
+		return false;
 	}
 
 }

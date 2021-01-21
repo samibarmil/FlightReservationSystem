@@ -20,5 +20,18 @@ public class Passenger extends Person {
 	public List<Reservation> ViewAllReservations() {
 		return reservations;
 	}
+	
+	public void CreateReservation(List<FlightInstance> flights) {
+		reservations.add(new Reservation(flights));
+	}
+	
+	public void RemoveReservation(String Id) {	
+		for(Reservation r : reservations) {
+			if(r.getId() == Id) {
+				reservations.remove(r);
+				DataModel.reservationDataModel.deleteEntity(Id);
+			}
+		}
+	}
 
 }

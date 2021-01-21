@@ -2,16 +2,18 @@ package DataAccess;
 
 import java.util.*;
 
+import Domain.Airport;
 import Domain.Crew;
 
 public class CrewDataModel implements iDataModel {
 
-	private Map<String, Crew> crews = new HashMap<>(); 
+	private Map<String, Crew> crews = new HashMap<>();
+
 	@Override
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Crew) {
 			Crew crew = (Crew) obj;
-			crews.put(crew.getId() ,crew);
+			crews.put(crew.getId(), crew);
 			return true;
 		}
 		return false;
@@ -19,7 +21,7 @@ public class CrewDataModel implements iDataModel {
 
 	@Override
 	public Object getEntity(String Id) {
-		if(crews.containsKey(Id))
+		if (crews.containsKey(Id))
 			return crews.get(Id);
 		return null;
 	}
@@ -31,8 +33,18 @@ public class CrewDataModel implements iDataModel {
 
 	@Override
 	public boolean deleteEntity(String Id) {
-		if(crews.remove(Id) != null)
+		if (crews.remove(Id) != null)
 			return true;
+		return false;
+	}
+	
+	@Override
+	public boolean UpdateEntity(Object obj) {
+		if (obj instanceof Crew) {
+			Crew crew = (Crew) obj;
+			crews.put(crew.getId(), crew);
+			return true;
+		}
 		return false;
 	}
 

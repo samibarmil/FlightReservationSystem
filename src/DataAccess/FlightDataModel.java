@@ -2,6 +2,7 @@ package DataAccess;
 
 import java.util.*;
 
+import Domain.Airport;
 import Domain.Flight;
 
 public class FlightDataModel implements iDataModel {
@@ -33,6 +34,16 @@ public class FlightDataModel implements iDataModel {
 	public boolean deleteEntity(String Id) {
 		if(flights.remove(Id) != null)
 			return true;
+		return false;
+	}
+	
+	@Override
+	public boolean UpdateEntity(Object obj) {
+		if (obj instanceof Flight) {
+			Flight flight = (Flight) obj;
+			flights.put(flight.getId(), flight);
+			return true;
+		}
 		return false;
 	}
 }

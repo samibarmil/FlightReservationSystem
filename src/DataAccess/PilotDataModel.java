@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import Domain.Airport;
 import Domain.Pilot;
 
 public class PilotDataModel implements iDataModel {
@@ -35,6 +36,16 @@ public class PilotDataModel implements iDataModel {
 	public boolean deleteEntity(String Id) {
 		if(pilots.remove(Id) != null)
 			return true;
+		return false;
+	}
+	
+	@Override
+	public boolean UpdateEntity(Object obj) {
+		if (obj instanceof Pilot) {
+			Pilot pilot = (Pilot) obj;
+			pilots.put(pilot.getId(), pilot);
+			return true;
+		}
 		return false;
 	}
 

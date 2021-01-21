@@ -11,5 +11,7 @@ public interface iDataModel {
 	public List getall();
 
 	public boolean deleteEntity(String Id);
+	
+	public boolean UpdateEntity(Object obj);
 
 }

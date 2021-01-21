@@ -15,10 +15,11 @@ public class Reservation {
 	// To make sure that the generated random alphanumeric wasn't used before
 	private ArrayList<String> randomNumbersInUse = new ArrayList<>();
 
-	public Reservation() {
+	public Reservation(List<FlightInstance> flightInstances) {
 		this.id = UUID.randomUUID().toString();
 		this.reservationCode = randomAlphaNumeric();
 		tickets = new ArrayList<>();
+		ConfirmReservation(flightInstances);
 		DataModel.reservationDataModel.addEntity(this);
 	}
 
@@ -57,6 +58,14 @@ public class Reservation {
 
 	public void setTickets(List<Ticket> tickets) {
 		this.tickets = tickets;
+	}
+	
+	
+	public void ConfirmReservation(List<FlightInstance> flightInstances) {
+		
+		for(FlightInstance flight : flightInstances) {
+			tickets.add(new Ticket(flight));
+		}
 	}
 
 }
