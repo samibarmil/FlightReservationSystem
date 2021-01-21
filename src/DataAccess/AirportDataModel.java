@@ -1,11 +1,6 @@
 package DataAccess;
 
 import java.util.*;
-
-
-import javax.print.attribute.HashAttributeSet;
-
-import Domain.Airline;
 import Domain.Airport;
 
 public class AirportDataModel implements iDataModel {
@@ -32,7 +27,7 @@ public class AirportDataModel implements iDataModel {
 	}
 
 	@Override
-	public List getall() {
+	public List<Airport> getall() {
 		return new ArrayList<Airport>(airports.values());
 	}
 

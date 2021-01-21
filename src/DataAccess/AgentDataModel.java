@@ -22,7 +22,7 @@ public class AgentDataModel implements iDataModel {
 	}
 
 	@Override
-	public List getall() {
+	public List<Agent> getall() {
 		return new ArrayList<Agent>(agents.values());
 	}
 

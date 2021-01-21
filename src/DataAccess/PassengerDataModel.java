@@ -29,7 +29,7 @@ public class PassengerDataModel implements iDataModel {
 	}
 
 	@Override
-	public List getall() {
+	public List<Passenger> getall() {
 		return new ArrayList<Passenger>(passengers.values());
 	}
 

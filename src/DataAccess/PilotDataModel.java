@@ -27,7 +27,7 @@ public class PilotDataModel implements iDataModel {
 	}
 
 	@Override
-	public List getall() {
+	public List<Pilot> getall() {
 		return new ArrayList<Pilot>(pilots.values());
 	}
 
