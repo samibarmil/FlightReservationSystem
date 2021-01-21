@@ -9,7 +9,7 @@ public final class ReservationBusiness {
 	private ReservationBusiness() {
 	}
 
-	public static void ViewReservation(Person person, String Id) {
+	public static void ViewSpecificReservation(Person person, String Id) {
 		if (person instanceof Passenger) {
 			Passenger passenger = (Passenger) person;
 			for (Reservation reservation : passenger.ViewAllReservations())
@@ -28,7 +28,7 @@ public final class ReservationBusiness {
 		}
 	}
 
-	public static void ViewReservations(Person person) {
+	public static void ViewAllReservations(Person person) {
 
 		if (person instanceof Passenger) {
 			Passenger psngr = (Passenger) person;
