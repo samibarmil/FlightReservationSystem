@@ -10,24 +10,35 @@ import DataAccess.DataModel;
 public class Reservation {
 
 	private final String id;
-	private final String reservationCode; // 6 character alphanumeric
+	private final String reservationCode; // It must be 6 character alphanumeric
 	private List<Ticket> tickets;
+	// To make sure that the generated random alphanumeric wasn't used before
+	public ArrayList<String> randomNumbersInUse = new ArrayList<>();
 
 	public Reservation() {
 		this.id = UUID.randomUUID().toString();
-		this.reservationCode = randomAlphaNumeric(6);
+		this.reservationCode = randomAlphaNumeric();
 		tickets = new ArrayList<>();
 		DataModel.reservationDataModel.addEntity(this);
 	}
 
-	private String randomAlphaNumeric(int alphaNumericLength) {
+	// A unique alphanumeric is generated here
+	public String randomAlphaNumeric() {
 		String alphaNumericSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder randomValue = new StringBuilder();
 		Random rnd = new Random();
-		while (randomValue.length() < alphaNumericLength) { // length of the random string.
+		while (randomValue.length() < 6) { // length of the random string
 			int index = (int) (rnd.nextFloat() * alphaNumericSet.length());
 			randomValue.append(alphaNumericSet.charAt(index));
 		}
+		while (true) {
+			if (!randomNumbersInUse.contains(randomValue.toString())) {
+				randomNumbersInUse.add(randomValue.toString());
+				break;
+			}
+			randomAlphaNumeric();
+		}
+
 		return randomValue.toString();
 
 	}

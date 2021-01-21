@@ -1,28 +1,46 @@
 package Domain;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Random;
 import java.util.UUID;
-import java.util.concurrent.ArrayBlockingQueue;
-
-import DataAccess.DataModel;
 
 public class Main {
+//
+//	private static String randomAlphaNumeric() {
+//		String alphaNumericSet = "1234567890";
+//		StringBuilder randomValue = new StringBuilder();
+//		Random rnd = new Random();
+//		while (randomValue.length() < 20) { // length of the random string.
+//			int index = (int) (rnd.nextFloat() * 10);
+//			randomValue.append(alphaNumericSet.charAt(index));
+//		}
+//		return randomValue.toString();
+////
+////	}
+//	 static ArrayList<String> randomNumbersInUse = new ArrayList<>();
+//
+////	
+//	private static String randomAlphaNumeric(int alphaNumericLength) {
+//		String alphaNumericSet = "A";
+//		StringBuilder randomValue = new StringBuilder();
+//		Random rnd = new Random();
+//		while (randomValue.length() < alphaNumericLength) { // length of the random string.
+//			int index = (int) (rnd.nextFloat() * alphaNumericSet.length());
+//			randomValue.append(alphaNumericSet.charAt(index));
+//		}
+//
+//		while (true) {
+//			if (!randomNumbersInUse.contains(randomValue)) {
+//				randomNumbersInUse.add(randomValue.toString());
+//				break;
+//			} else {
+//				randomAlphaNumeric(alphaNumericLength);
+//			}
+//		}
+//		return randomValue.toString();
+//
+//	}
 
-	private static String randomAlphaNumeric() {
-		String alphaNumericSet = "1234567890";
-		StringBuilder randomValue = new StringBuilder();
-		Random rnd = new Random();
-		while (randomValue.length() < 20) { // length of the random string.
-			int index = (int) (rnd.nextFloat() * 10);
-			randomValue.append(alphaNumericSet.charAt(index));
-		}
-		return randomValue.toString();
-
-	}
 	public static void main(String args[]) {
 //
 //		try {
@@ -35,19 +53,12 @@ public class Main {
 //		catch (Exception e) {
 //			System.out.println(e.getMessage());
 //		}
-		System.out.println(randomAlphaNumeric());
+			Random r = new Random();
+			System.out.println(r.nextInt(3));
+			System.out.println(Ticket.randomAlphaNumeric());
+			System.out.println(Ticket.randomAlphaNumeric());
+			System.out.println(Ticket.randomAlphaNumeric());
 
-		// System.out.println(getSaltString());
-		List<Pilot> x = new ArrayList<>();
-		for(int i =0; i < 20; i ++) {
-			x.add(new Pilot(randomAlphaNumeric(), randomAlphaNumeric(), randomAlphaNumeric(), LocalDate.now(),0 ));
-			
-			
-		}
-		
-		
-		System.out.println(DataModel.pilotDataModel.getall().toString());
-		
 		
 	}
 
