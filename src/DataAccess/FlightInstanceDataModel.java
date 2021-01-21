@@ -14,7 +14,7 @@ public class FlightInstanceDataModel implements iDataModel {
 	public boolean addEntity(Object obj) {
 		if (obj instanceof FlightInstance) {
 			FlightInstance flightInstance = (FlightInstance) obj;
-			flightInstances.add(flightInstance.getId() ,flightInstance);
+			flightInstances.put(flightInstance.getId() ,flightInstance);
 			return true;
 		}
 		return false;

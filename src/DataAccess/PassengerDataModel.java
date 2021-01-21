@@ -15,7 +15,7 @@ public class PassengerDataModel implements iDataModel {
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Passenger) {
 			Passenger passenger = (Passenger) obj;
-			passengers.add(passenger.getId() ,passenger);
+			passengers.put(passenger.getId() ,passenger);
 			return true;
 		}
 		return false;

@@ -13,7 +13,7 @@ public class PilotDataModel implements iDataModel {
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Pilot) {
 			Pilot pilot = (Pilot) obj;
-			pilots.add(pilot.getId() ,pilot);
+			pilots.put(pilot.getId() ,pilot);
 			return true;
 		}
 		return false;

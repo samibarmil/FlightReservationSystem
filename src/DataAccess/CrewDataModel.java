@@ -11,7 +11,7 @@ public class CrewDataModel implements iDataModel {
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Crew) {
 			Crew crew = (Crew) obj;
-			crews.add(crew.getId() ,crew);
+			crews.put(crew.getId() ,crew);
 			return true;
 		}
 		return false;

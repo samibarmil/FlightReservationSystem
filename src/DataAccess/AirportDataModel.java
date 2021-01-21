@@ -17,7 +17,8 @@ public class AirportDataModel implements iDataModel {
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Airport) {
 			Airport airport = (Airport) obj;
-			airports.add(airport.getId() ,airport);
+			airports.put(airport.getId() ,airport);
+			
 			return true;
 		}
 		return false;

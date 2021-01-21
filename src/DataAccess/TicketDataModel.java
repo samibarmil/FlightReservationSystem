@@ -14,7 +14,7 @@ public class TicketDataModel implements iDataModel {
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Ticket) {
 			Ticket ticket = (Ticket) obj;
-			tickets.add(ticket.getId() ,ticket);
+			tickets.put(ticket.getId() ,ticket);
 			return true;
 		}
 		return false;

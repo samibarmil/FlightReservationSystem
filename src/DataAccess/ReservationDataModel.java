@@ -14,7 +14,7 @@ public class ReservationDataModel implements iDataModel {
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Reservation) {
 			Reservation pilot = (Reservation) obj;
-			pilots.add(pilot.getId() ,pilot);
+			pilots.put(pilot.getId() ,pilot);
 			return true;
 		}
 		return false;

@@ -3,6 +3,7 @@ package Domain;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import DataAccess.DataModel;
 
 public class Agent extends Person {
 

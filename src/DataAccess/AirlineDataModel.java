@@ -13,7 +13,7 @@ public class AirlineDataModel implements iDataModel{
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Airline) {
 			Airline airline = (Airline) obj;
-			airlines.add(airline.getId(), airline);
+			airlines.put(airline.getId(), airline);
 			return true;
 		}
 		return false;
