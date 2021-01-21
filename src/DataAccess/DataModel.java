@@ -1,14 +1,7 @@
 package DataAccess;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 public abstract class DataModel {
-	
-	
-	
+
 	public static AgentDataModel agentDataModel = new AgentDataModel();
 	public static AirportDataModel airportDataModel = new AirportDataModel();
 	public static AirlineDataModel airLineDataModel = new AirlineDataModel();
@@ -19,11 +12,5 @@ public abstract class DataModel {
 	public static PilotDataModel pilotDataModel = new PilotDataModel();
 	public static ReservationDataModel reservationDataModel = new ReservationDataModel();
 	public static TicketDataModel ticketDataModel = new TicketDataModel();
-	
-	
-
-	
-
-
 
 }

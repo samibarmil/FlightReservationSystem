@@ -53,11 +53,11 @@ public class Main {
 //		catch (Exception e) {
 //			System.out.println(e.getMessage());
 //		}
-			Random r = new Random();
-			System.out.println(r.nextInt(3));
-			System.out.println(Ticket.randomAlphaNumeric());
-			System.out.println(Ticket.randomAlphaNumeric());
-			System.out.println(Ticket.randomAlphaNumeric());
+//			Random r = new Random();
+//			System.out.println(r.nextInt(3));
+//			System.out.println(Ticket.randomNumeric());
+//			System.out.println(Ticket.randomNumeric());
+//			System.out.println(Ticket.randomNumeric());
 
 		
 	}

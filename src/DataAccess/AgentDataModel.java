@@ -6,6 +6,7 @@ import Domain.Agent;
 public class AgentDataModel implements iDataModel {
 
 	private Map<String, Agent> agents = new HashMap<>();
+	
 	@Override
 	public boolean addEntity(Object obj) {
 		if (obj instanceof Agent) {

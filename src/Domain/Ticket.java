@@ -12,17 +12,17 @@ public class Ticket {
 	private final String ticketNumber; // 20 digits random
 	private FlightInstance specificFlight;
 	// To make sure that the generated random number wasn't used before
-	public static ArrayList<String> randomNumbersInUse = new ArrayList<>();
+	private ArrayList<String> randomNumbersInUse = new ArrayList<>();
 
 	public Ticket(FlightInstance flight) {
 		this.id = UUID.randomUUID().toString();
-		this.ticketNumber = UUID.randomUUID().toString();
+		this.ticketNumber = randomNumeric();
 		this.specificFlight = flight;
 		DataModel.ticketDataModel.addEntity(this);
 	}
 
 	// A unique 20 digits random will be generated here
-	public static String randomNumeric() {
+	private String randomNumeric() {
 		String numeralsSet = "1234567890";
 		StringBuilder randomValue = new StringBuilder();
 		Random rnd = new Random();

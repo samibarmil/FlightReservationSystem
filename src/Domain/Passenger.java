@@ -13,14 +13,12 @@ public class Passenger extends Person {
 	public Passenger(String fName, String lName, String eMail, LocalDate DOB) {
 		super(fName, lName, eMail, DOB);
 		this.reservations = new ArrayList<>();
-		
+
 		DataModel.passengerDataModel.addEntity(this);
 	}
 
 	public List<Reservation> ViewAllReservations() {
 		return reservations;
 	}
-	
-	
 
 }

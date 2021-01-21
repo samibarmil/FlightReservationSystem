@@ -13,7 +13,7 @@ public class Reservation {
 	private final String reservationCode; // It must be 6 character alphanumeric
 	private List<Ticket> tickets;
 	// To make sure that the generated random alphanumeric wasn't used before
-	public ArrayList<String> randomNumbersInUse = new ArrayList<>();
+	private ArrayList<String> randomNumbersInUse = new ArrayList<>();
 
 	public Reservation() {
 		this.id = UUID.randomUUID().toString();
@@ -22,8 +22,8 @@ public class Reservation {
 		DataModel.reservationDataModel.addEntity(this);
 	}
 
-	// A unique alphanumeric is generated here
-	public String randomAlphaNumeric() {
+	// A unique 6 character alphanumeric is generated here
+	private String randomAlphaNumeric() {
 		String alphaNumericSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder randomValue = new StringBuilder();
 		Random rnd = new Random();

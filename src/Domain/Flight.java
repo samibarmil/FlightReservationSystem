@@ -27,9 +27,8 @@ public class Flight {
 		this.arrivalTime = arrivalTime;
 		this.departureAirport = departureAirport;
 		this.arrivalAirport = arrivalAirport;
-		
+
 		DataModel.flightDataModel.addEntity(this);
-		
 
 	}
 
