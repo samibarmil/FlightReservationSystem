@@ -121,7 +121,7 @@ public class Main {
 		fi.add(DataModel.flightDataModel.getall().get(rand.nextInt(70)).getFlightInstances().get(rand.nextInt(90)));
 
 		ReservationBusiness.CreateReservation(DataModel.passengerDataModel.getall().get(rand.nextInt(50)), fi);
-		
+
 		Passenger psgr = DataModel.passengerDataModel.getall().get(rand.nextInt(50));
 		ReservationBusiness.ViewSpecificReservation(psgr, psgr.ViewAllReservations().get(rand.nextInt(50)).getId());
 

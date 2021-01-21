@@ -17,7 +17,7 @@ public final class AirLineBusiness {
 
 	private AirLineBusiness() {
 	}
-
+	
 	public static void airlinesFlyingOutFromSpecificAirport(String airportCode) {
 
 		List<Flight> allFlights = DataModel.flightDataModel.getall();
@@ -49,7 +49,7 @@ public final class AirLineBusiness {
 			}
 		}
 		for (Airline a : airLinesOutOfAnAirport)
-			System.out.print(a.getCode() +",");
+			System.out.print(a.getCode() + ",");
 	}
 
 }
