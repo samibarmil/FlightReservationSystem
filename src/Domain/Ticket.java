@@ -1,8 +1,34 @@
 package Domain;
 
+import java.util.Random;
+import java.util.UUID;
+
 public class Ticket {
 
-	private String id;
-	private String ticketNumber; // 20 digits random
+	private final String id;
+	private final String ticketNumber; // 20 digits random
+	private FlightInstance specificFlight;
+
+	public Ticket(FlightInstance flight) {
+		this.id = UUID.randomUUID().toString();
+		this.ticketNumber = UUID.randomUUID().toString();
+		this.specificFlight = flight;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getTicketNumber() {
+		return ticketNumber;
+	}
+
+	public FlightInstance getSpecificFlight() {
+		return specificFlight;
+	}
+
+	public void setSpecificFlight(FlightInstance specificFlight) {
+		this.specificFlight = specificFlight;
+	}
 
 }
