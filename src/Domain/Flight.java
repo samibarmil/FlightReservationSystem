@@ -40,7 +40,7 @@ public class Flight {
 		Random r = new Random();
 		int rNumber = r.nextInt(1000);
 		if (randomNumbersInUse.size() == 999)
-			throw new Exception("The random numbers in use List has to be enlarged");
+			throw new UserException("The random numbers in use List has to be enlarged");
 		while (randomNumbersInUse.contains(rNumber) || rNumber == 0) {
 			rNumber = r.nextInt(1000);
 		}
