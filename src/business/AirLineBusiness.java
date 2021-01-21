@@ -49,7 +49,7 @@ public final class AirLineBusiness {
 			}
 		}
 		for (Airline a : airLinesOutOfAnAirport)
-			System.out.print(a +",");
+			System.out.print(a.getCode() +",");
 	}
 
 }
