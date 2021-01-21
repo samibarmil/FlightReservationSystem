@@ -15,6 +15,7 @@ public class Flight {
 	private LocalTime arrivalTime;
 	private Airport departureAirport;
 	private Airport arrivalAirport;
+	private List<FlightInstance> flightInstances;
 	// To make sure that the generated random number wasn't used before
 	private ArrayList<Integer> randomNumbersInUse = new ArrayList<>();
 
@@ -27,6 +28,7 @@ public class Flight {
 		this.arrivalTime = arrivalTime;
 		this.departureAirport = departureAirport;
 		this.arrivalAirport = arrivalAirport;
+		flightInstances = new ArrayList<>();
 
 		DataModel.flightDataModel.addEntity(this);
 
@@ -104,6 +106,10 @@ public class Flight {
 		return String.format("ID: %s\tNumber: %s\tCapacity: %d\tDeparture Time: %s\tArrival Time: %s\t"
 				+ "From: %s\t To: %s", id, number, capacity, departureTime.toString(), arrivalTime.toString(), 
 				departureAirport.getCode(), arrivalAirport.getCode());
+	}
+
+	public List<FlightInstance> getFlightInstances() {
+		return flightInstances;
 	}
 
 }

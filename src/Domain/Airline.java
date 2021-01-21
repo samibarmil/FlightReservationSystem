@@ -24,6 +24,10 @@ public class Airline {
 		DataModel.airLineDataModel.addEntity(this);
 
 	}
+	
+	public void createFlight(Flight flight) {
+		flights.add(flight);
+	}
 
 	public String getId() {
 		return id;
@@ -56,6 +60,10 @@ public class Airline {
 	public List<Flight> getFlights() {
 		return flights;
 	}
-
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 
 }
