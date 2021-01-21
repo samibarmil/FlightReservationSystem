@@ -59,11 +59,15 @@ public class Reservation {
 	public void setTickets(List<Ticket> tickets) {
 		this.tickets = tickets;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return String.format("ID: %s \tReservation Code: %s",id,reservationCode);
+	}
+
 	public void ConfirmReservation(List<FlightInstance> flightInstances) {
-		
-		for(FlightInstance flight : flightInstances) {
+
+		for (FlightInstance flight : flightInstances) {
 			tickets.add(new Ticket(flight));
 		}
 	}
